@@ -24,14 +24,9 @@ export default function TemperatureConverter() {
 
     function handleSwitchTemperature() {
         setIsActive(!isActive)
-        // swap placement of elements
-
-
-        // swap main element
     }
 
     function handleCelsuis(e: ChangeEvent<HTMLInputElement>) {
-        // if change from celsuis
         setTemp({
             celsuis: parseFloat(e.target.value),
             fahrenheit: CtoF(parseFloat(e.target.value))
@@ -39,7 +34,6 @@ export default function TemperatureConverter() {
     }
 
     function handleFaherenheit(e: ChangeEvent<HTMLInputElement>) {
-        // if change from celsuis
         setTemp({
             fahrenheit: parseFloat(e.target.value),
             celsuis: FtoC(parseFloat(e.target.value))
@@ -48,10 +42,10 @@ export default function TemperatureConverter() {
 
 
     return (
-        <>
-            {isActive ? <Temperature value={temp.celsuis} type="Celsuis" onTypeTemperature={handleCelsuis} /> : <Temperature value={temp.fahrenheit} type="Fahrenheit" onTypeTemperature={handleFaherenheit} />}
-            <button onClick={handleSwitchTemperature}>Switch</button>
-            {!isActive ? <Temperature value={temp.celsuis} type="Celsuis" onTypeTemperature={handleCelsuis} /> : <Temperature value={temp.fahrenheit} type="Fahrenheit" onTypeTemperature={handleFaherenheit} />}
-        </>
+        <div>
+            {isActive ? <Temperature value={temp.celsuis} type="Celsuis" onTypeTemperature={handleCelsuis} /> : <Temperature value={temp.fahrenheit} type="Fahrenheit" onTypeTemperature={handleFaherenheit} />} 
+                    <button className="divider lg:divider-horizontal" onClick={handleSwitchTemperature}>Switch</button>
+            {!isActive ? <Temperature value={temp.celsuis} type="Celsuis" onTypeTemperature={handleCelsuis} /> : <Temperature value={temp.fahrenheit} type="Fahrenheit" onTypeTemperature={handleFaherenheit} />} 
+        </div>
     )
 }
