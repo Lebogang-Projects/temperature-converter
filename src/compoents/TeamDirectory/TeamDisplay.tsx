@@ -3,6 +3,8 @@ import FilterText from "./FilterText";
 import { employeeData } from "./data";
 import { useState } from "react";
 import {type ChangeEvent} from "react";
+import NavTabs from "../Nav/NavTabs";
+
 
 export default function TeamDisplay() {
     const [query, setQuery] = useState("");
@@ -17,6 +19,7 @@ export default function TeamDisplay() {
     
     return (
         <div className="flex flex-col items-center justify-center w-full">
+            <NavTabs activeTab="employee-display" />
             <FilterText onType={handleOnType} filterText={query} />
             
             <List employees={handleFilter(query)}/>

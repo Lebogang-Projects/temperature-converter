@@ -1,7 +1,7 @@
 import { useState, type ChangeEvent } from "react";
 import Temperature from "./Temperature";
 import Weather from "./Weather";
-
+import NavTabs from "../Nav/NavTabs";
 export default interface props {
     value: number,
     type: string,
@@ -42,6 +42,9 @@ export default function TemperatureConverter() {
 
 
     return (
+        <>
+        <NavTabs activeTab="temperature-converter" />
+
         <div className="flex flex-col items-center justify-center min-h-screen bg-zinc-950 p-3">
            
             <div className="w-full   overflow-hidden rounded-[2.5rem] bg-black shadow-2xl border border-zinc-800">
@@ -60,5 +63,6 @@ export default function TemperatureConverter() {
 
 
         </div>
+        </>
     )
 }
