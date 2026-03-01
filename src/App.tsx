@@ -6,7 +6,7 @@ import TeamDisplay from './compoents/TeamDirectory/TeamDisplay';
 function App() {
 
   return (
-    <div className="align-middle flex h-screen items-center justify-center">
+    <div className="flex h-screen w-full items-center justify-center">
       <TeamDisplay />
     </div>
   )

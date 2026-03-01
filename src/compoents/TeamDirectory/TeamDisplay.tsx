@@ -8,9 +8,7 @@ export default function TeamDisplay() {
     const [query, setQuery] = useState("");
 
     function handleFilter(queryText: string) {
-        
-            return employeeData.filter(emp => emp.name.includes(queryText) || emp.role.includes(queryText))
-     
+        return employeeData.filter(emp => emp.name.toLowerCase().includes(queryText.toLowerCase()) || emp.role.toLowerCase().includes(queryText.toLowerCase()))
     }
 
     function handleOnType(e: ChangeEvent<HTMLInputElement>) {
@@ -18,10 +16,10 @@ export default function TeamDisplay() {
     }
     
     return (
-        <div>
-        <FilterText onType={handleOnType} filterText={query} />
-          
-        <List employees={handleFilter(query)}/>
+        <div className="flex flex-col items-center justify-center w-full">
+            <FilterText onType={handleOnType} filterText={query} />
+            
+            <List employees={handleFilter(query)}/>
         </div>
     )
 }

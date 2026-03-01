@@ -10,13 +10,13 @@ interface Props {
 
 export default function List({employees}: Props) {
     return (
-        <div className="flex flex-row">
-            <ul>
+        <div className="">
+            <ul className="list   rounded-box shadow-md">
                 {employees.map((employee, index) => (
-                    <li className="card card-border card-xs bg-base-100 w-96" key={index}>
-                    <div card-body>
+                    <li className="list-row w-full m-2 bg-amber-600" key={index}>
+                    <div className="card-body  ">
                         <div className="card-title text-2xl">{employee.name} </div>
-                        <div>{employee.role} </div>
+                        <div className="text-shadow-current">{employee.role} </div>
                     </div>
                     </li>
                 ))}
